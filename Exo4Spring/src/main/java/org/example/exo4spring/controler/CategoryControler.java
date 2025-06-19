@@ -18,7 +18,7 @@ import java.util.List;
 @Controller
 public class CategoryControler {
 
-    private final CategoryService baseService;
+    private final BaseService<Category> baseService;
 
 
     public CategoryControler(@Qualifier("categoryService") CategoryService baseService) {

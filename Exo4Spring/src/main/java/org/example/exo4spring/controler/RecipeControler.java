@@ -20,7 +20,7 @@ import java.util.UUID;
 @Controller
 public class RecipeControler {
 
-private final RecipeService baseService;
+private final BaseService<Recipe> baseService;
 
     @GetMapping
     public String homePage(){

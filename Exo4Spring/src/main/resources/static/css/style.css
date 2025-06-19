@@ -1,6 +1,12 @@
+
+form, nav, input, span, text{
+    color: black;
+    background-color: black;
+}
+
 body {
     height: 100vh;
-    color: white;
+    color: black;
     font-family: Dubai, fantasy;
     background: linear-gradient(45deg, #0b4671, #1c2746, #553bb7, #200067);
     background-size: 200% 200%;
@@ -30,13 +36,14 @@ footer{
     font-family: Impact, fantasy;
 }
 div{
-    color: white;
-
-}
-*{
-    color: white;
-}
-
-button{
     color: black;
+
+}
+* {
+    color: black;
+
+
+    button {
+        color: black;
+    }
 }
