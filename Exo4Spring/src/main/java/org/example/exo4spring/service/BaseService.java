@@ -6,28 +6,36 @@ import org.example.exo4spring.util.Categ;
 
 import java.util.List;
 
-public interface BaseService {
+public interface BaseService<T>  {
 
 
-    Recipe addRecipe(Recipe recipe);
+//    Recipe addRecipe(Recipe recipe);
+//
+//    Recipe getRecipeById(Long id);
+//
+//    List<Recipe> getAllRecipes();
+//
+//    Recipe updateRecipe(String name, List<String> ingredients, String instruction, Categ categ);
+//
+//    Recipe deleteRecipeById(Long id);
 
-    Recipe getRecipeById(Long id);
+    T add(T t);
 
-    List<Recipe> getAllRecipes();
+    T update(T t);
 
-    Recipe updateRecipe(String name, List<String> ingredients, String instruction, Categ categ);
+    T delete(Long id);
 
-    Recipe deleteRecipeById(Long id);
+    T getById(Long id);
 
+    List<T> getAll();
 
-
-    Category addCategory(Category category);
-
-    Category getCategoryById(Long id);
-
-    List<Category> getAllCategories();
-
-    Category updateCategory(Categ name, String description);
-
-    Category deleteCategoryById(Long id);
+//    Category addCategory(Category category);
+//
+//    Category getCategoryById(Long id);
+//
+//    List<Category> getAllCategories();
+//
+//    Category updateCategory(Categ name, String description);
+//
+//    Category deleteCategoryById(Long id);
 }

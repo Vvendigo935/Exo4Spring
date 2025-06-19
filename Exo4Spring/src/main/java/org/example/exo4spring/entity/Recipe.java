@@ -30,7 +30,7 @@ public class Recipe {
     private String instruction;
 
     @NotNull
-    Categ categ;
+    String categ;
 
 
 

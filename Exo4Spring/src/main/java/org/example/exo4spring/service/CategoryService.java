@@ -1,8 +1,6 @@
 package org.example.exo4spring.service;
 
 import org.example.exo4spring.entity.Category;
-import org.example.exo4spring.entity.Recipe;
-import org.example.exo4spring.util.Categ;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -16,59 +14,33 @@ public class CategoryService implements BaseService {
 
 
     @Override
-    public Recipe addRecipe(Recipe recipe) {
-        return null;
-    }
-
-    @Override
-    public Recipe getRecipeById(Long id) {
-        return null;
-    }
-
-    @Override
-    public List<Recipe> getAllRecipes() {
-        return List.of();
-    }
-
-    @Override
-    public Recipe updateRecipe(String name, List<String> ingredients, String instruction, Categ categ) {
-        return null;
-    }
-
-    @Override
-    public Recipe deleteRecipeById(Long id) {
-        return null;
-    }
-
-    @Override
-    public Category addCategory(Category category) {
+    public Category add(Category category) {
         category.setId(currentId++);
         categories.add(category);
         return category;
     }
 
     @Override
-    public Category getCategoryById(Long id) {
+    public Category getById(Long id) {
         return categories.stream().filter(category -> category.getId().equals(id)).findFirst().orElse(null);
 
     }
 
     @Override
-    public List<Category> getAllCategories() {
+    public List<Category> getAll() {
         return categories;
     }
 
     @Override
-    public Category updateCategory(Categ name, String description) {
-        Category categoryMod = new Category();
-        categoryMod.setName(name);
-        categoryMod.setDescription(description);
-        return categoryMod;
+    public Category update(Category category) {
+categories.get(categories.indexOf(category)).setName(category.getName());
+categories.get(categories.indexOf(category)).setDescription(category.getDescription());
+        return category;
     }
 
     @Override
-    public Category deleteCategoryById(Long id) {
-        Category category = getCategoryById(id);
+    public Category delete(Long id) {
+        Category category = getById(id);
         categories.remove(category);
         return null;
     }

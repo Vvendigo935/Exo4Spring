@@ -18,7 +18,7 @@ public class Category {
 
     @NotNull
     @NotBlank(message = "recipe must have a name !")
-    Categ name;
+    String name;
 
     @NotNull
     private String description;
