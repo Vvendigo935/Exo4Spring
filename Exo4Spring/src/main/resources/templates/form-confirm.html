@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link th:href="@{/css/style.css}" type="text/css" rel="stylesheet">
 </head>
 <body>
 <h1>Element added successfully</h1>
-
+<footer>
+    <nav>
+        <a th:href="@{/}">Home Page</a>
+    </nav>
+</footer>
 </body>
 </html>

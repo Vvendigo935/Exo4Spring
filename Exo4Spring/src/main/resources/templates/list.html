@@ -1,10 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>List</title>
+    <link th:href="@{/css/style.css}" type="text/css" rel="stylesheet">
 </head>
 <body>
+<h1>Recipe List</h1>
+<nav>
+    <a th:href="@{/}">Home Page</a>
+</nav>
+
+
+<ul th:if="${recipes == null}"> No recipe in the list </ul>
+
+<div>
+
+    <ul th:if="${recipes != null}">
+
+        <li th:each="r : ${recipes}">
+
+            <a th:href="@{detail/{id}(id=${r.getId()})}"> <span th:text="${r.getName()}"></span> <span th:text="${r.getCateg()}"></span>
+        </li>
+    </ul>
+</div>
+
+
+<footer>
+    <nav>
+        <a th:href="@{/}">Home Page</a>
+    </nav>
+</footer>
 
 </body>
 </html>

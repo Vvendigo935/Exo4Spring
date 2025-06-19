@@ -7,8 +7,6 @@ import org.example.exo4spring.util.Categ;
 import java.util.List;
 
 public interface BaseService<T>  {
-
-
 //    Recipe addRecipe(Recipe recipe);
 //
 //    Recipe getRecipeById(Long id);

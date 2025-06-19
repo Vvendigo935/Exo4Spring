@@ -6,8 +6,8 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
-@Service
-public class CategoryService implements BaseService {
+@Service("categoryService")
+public class CategoryService implements BaseService<Category> {
 
     private List<Category> categories = new ArrayList<>();
     private Long currentId = 1L;

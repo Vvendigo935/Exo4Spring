@@ -1,10 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Detail</title>
+    <link th:href="@{/css/style.css}" type="text/css" rel="stylesheet">
 </head>
 <body>
 
+<h1>Recipe detail</h1>
+<p>Name : <span th:text="${recipe.getName()}"></span></p>
+<p>Ingredients : <span th:text="${recipe.getIngredients()}"></span></p>
+<p>Instructions : <span th:text="${recipe.getInstruction()}"></span></p>
+<p>Category : <span th:text="${recipe.getCateg()}"></span></p>
+<br>
+
+
+
+
+<footer>
+    <nav>
+        <a th:href="@{/}">Home Page</a>
+    </nav>
+</footer>
 </body>
 </html>

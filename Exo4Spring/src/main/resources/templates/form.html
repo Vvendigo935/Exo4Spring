@@ -1,10 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Form</title>
+    <title>Form recipe</title>
+    <link th:href="@{/css/style.css}" type="text/css" rel="stylesheet">
 </head>
 <body>
+
+<h1>Add Recipe</h1>
+<form th:action="@{/add}" th:object="${recipe}" method="post">
+    <div class="mb-3">
+        <label for="name" class="form-label">Name of the recipe</label>
+        <input type="text" id="name" class="form-control" th:field="*{name}" placeholder="Welsh" >
+        <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="ingredients" class="form-label">ingredients</label>
+        <input type="text" id="ingredients" class="form-control" th:field="*{ingredients}" placeholder="Cheddar, egg, bread, ham" >
+        <span th:if="${#fields.hasErrors('ingredients')}" th:errors="*{ingredients}"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="instruction" class="form-label">instruction</label>
+        <input type="text" id="instruction" class="form-control" th:field="*{instruction}" >
+        <span th:if="${#fields.hasErrors('instruction')}" th:errors="*{instruction}"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="categ" class="form-label">category</label>
+        <input type="text" id="categ" class="form-control" th:field="*{categ}" placeholder="Traditionnal" >
+        <span th:if="${#fields.hasErrors('categ')}" th:errors="*{categ}"></span>
+    </div>
+
+
+    <button  class="btn btn-success">Add Recipe</button>
+</form>
+
+<footer>
+    <nav>
+        <a th:href="@{/}">Home Page</a>
+    </nav>
+</footer>
 
 </body>
 </html>
